@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="tacos.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="burger.css" rel="stylesheet">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      // Replace with your actual Public Key from EmailJS dashboard
+      emailjs.init("YOUR_PUBLIC_KEY");
+      })();
+</script>
+
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <section id="nav_barr">
+        <div class="left"><img class="home" src="./house.svg" style="height: 50%;"></div>
+        <div class="midle"><img class="logo" src="./rh.png" ></div>
+        <div class="right basket_icon"><img class="home" src="./basket2.svg" style="height: 50%;"><div class="number_of_items_in_basket"><p>0</p></div></div>
+    </section>
+
+
+    <section id="basket">
+
+        <h1>Total order</h1>
+        <div></div>
+
+        <h2>Total<span class="order_total_price">0€</span></h2>
+        
+
+        <div class="client-info">
+    <input type="text" id="client_name" placeholder="Your Name" required>
+    <input type="tel" id="client_phone" placeholder="Phone Number" required>
+    <input type="text" id="client_address" placeholder="Delivery Address" required>
+</div>
+<p id="order-status" style="color: green; display: none;">Sending order...</p>
+
+        <button class="confirmer_l_ordre">Place order</button>
+
+    </section>
+
+
+
+
+
+
+
+    <section id="containner_tacos">
+
+    <section id="sections">
+        <h1 class="tacos">Nos Tacos</h1>
+    </section>
+
+    <section id="item_menu">
+        <div>
+            <img src="./tacos poulet.png">
+            <p class="title">Poulet Nature <span class="prix">7 €</span></p>
+            <p class="discription">galette de bœuf grillée, du fromage fondant, et nos oignons caramélisés signatures. Simple et délicieux.</p>
+        </div>
+        <div>
+            <img src="./tacos poulet marinée.png">
+            <p class="title">Poulet Marinée <span class="prix">7 €</span></p>
+            <p class="discription">galette de bœuf grillée, du fromage fondant, et nos oignons caramélisés signatures. Simple et délicieux.</p>
+        </div>
+        <div>
+            <img src="./tacos kefta.png">
+            <p class="title">Kefta<span class="prix">7.5 €</span></p>
+            <p class="discription">une galette de bœuf juteuse, du fromage blanc fondant, des tranches de tomate fraîches, de la laitue croquante et une touche de sauce. Le choix évident.</p>
+        </div>
+        <div>
+            <img src="./tacos_nuggets.png">
+            <p class="title">Nuget Poulet<span class="prix">7 €</span></p>
+            <p class="discription">apoulet haché croustillant est généreusement nappé d'une sauce crémeuse aux champignons fondante et riche, le tout surmonté de tranches de fromage blanc. Une texture incomparable.</p>
+        </div>
+
+    </section>
+
+    <section class="pop_up"  >
+        <div class="dash"></div>
+        <h1>Percise your Tacos </h1>
+
+        <p>How do you like your meat ?</p>
+        <div class="tacos_size meat_cook">
+            <div>
+                <div class="xl"><img src="./Xl.png"></div>
+                <p>XL</p>
+            </div>
+            <div>
+                <div class="l"><img src="./L.png"></div>
+                <p>L</p>
+            </div>
+            <div>
+                <div class="s"><img src="./s.png"></div>
+                <p>S</p>
+            </div>
+            <div class="selected">
+                <div class="m"><img src="./M.png"></div>
+                <p>M</p>
+            </div>
+        </div>
+
+        <p>How do you like your meat ?</p>
+        <div class="tacos_sauce">
+            <div><input type="radio" name="sauce" value="Pinky"> <label>Sauce Pinky</label></div>
+            <div><input type="radio" name="sauce" value="Andalous"><label>Sauce Andalous</label></div>
+            <div><input type="radio" name="sauce" value="Algerienne"><label>Sauce Algerienne</label></div>
+            <div><input type="radio" name="sauce" value="Biggie"><label>Sauce Biggie</label></div>
+            <div><input type="radio" name="sauce" value="Zaatar"><label>Sauce Zaatar</label></div>
+            <div><input type="radio" name="sauce" value="Mayonnaise"><label>Sauce Mayonnaise</label></div>
+            <div><input type="radio" name="sauce" value="Ketchup"><label>Ketchup</label></div>
+        </div>
+
+        <p>Supplements </p>
+        <div class="supplements">
+            
+            <div data-name="onions">
+                <div>
+                    <img src="./onions.png">
+                </div>
+                <section class="quantity-selector">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                </section>
+            </div>
+            <div data-name="carrots">
+                <div>
+                    <img src="./carrots.png">
+                </div>
+                <section class="quantity-selector">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                </section>
+            </div>
+            <div data-name="tomatoes">
+                <div>
+                    <img src="./tomatos.png">
+                </div>
+                <section class="quantity-selector">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                </section>
+
+            </div>
+            <div data-name="lettuce">
+                <div>
+                    <img src="./lettuce.png">
+                </div>
+                <section class="quantity-selector">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                </section>
+
+            </div>
+        </div>
+
+        <p>Extras </p>
+        <div class="extra">
+            <p>sauce</p>
+            <div class="extra_sauce">
+                
+                <div data-name="mayonnaise">
+                    <div>
+                        <img src="./mayonnaise.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="ketchup">
+                    <div><img src="./ketchup.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="algerienne">
+                    <div><img src="./alger.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="zaatar">
+                    <div><img src="./zaatar.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+                <div data-name="pinky">
+                    <div><img src="./pinky.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+            </div>
+
+            <p>Frites</p>
+            <div class="extra_frites">
+                
+                <div data-name="fries">
+                    <div>
+                        <img src="./fries.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+            </div>
+            
+            <p>Boissons</p>
+            <div class="extra_boissons">
+                
+                <div data-name="Rodeo 50cl">
+                    <div>
+                        <img src="./rodeo50cl.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="Rodeo 33cl">
+                    <div>
+                        <img src="./rodeo33cl.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="Jus d'orange">
+                    <div>
+                        <img src="./orange_juice.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+                <div data-name="Jus de banane">
+                    <div>
+                        <img src="./banana_juice.png">
+                    </div>
+                    <section class="quantity-selector">
+                        <button class="minus">-</button>
+                        <span class="quantity">0</span>
+                        <button class="plus">+</button>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>Resumé des choix : </p>
+        <div class="resume resume_tacos">
+            <p class="titre">Taille du tacos : </p> <p class="meat_cook_resume">Grillé</p>
+            <p class="titre">Sauce choisis : </p> <p class="sauce">Andalous</p>
+            <p class="titre">Supplements : </p> <ul> <li> Onions</li> <li> Frommage</li></ul>
+            <p class="titre">Extras : </p> <ul> <li> Sauce Pinky</li> <li> Rodeo 50cl x2</li></ul>
+            <p class="titre">Total : </p> <p class="total">0€</p>
+        </div>
+
+        <button class="confirmer_les_choix confirmer_les_choix_tacos">Confirme</button>
+
+    </section>
+
+    <section id="footer"></section>
+
+    </section>
+
+
+    <script src="burger.js"></script>
+
+    
+</body>
+
+
+</html>
+
+

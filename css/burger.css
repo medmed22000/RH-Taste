@@ -1,0 +1,93 @@
+#containner_burger {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0%;
+    padding-top: 60px;
+
+
+    background: radial-gradient( rgb(73, 60, 60) 90% , white 10%) ;
+    background-size: 600% 600%;
+}
+
+#containner_burger .pop_up {
+    background: linear-gradient(95deg , white, rgb(18, 17, 17));
+    box-shadow: -1px -1px 20px white;
+}
+
+#containner_burger .pop_up h1 {
+    text-align: center;
+    font-size: 22px;
+}
+#containner_burger .pop_up > p {
+    margin: 0%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 19px;
+    color: white;
+    justify-self: center;
+
+    background: linear-gradient(100deg , black,grey);
+    box-shadow: 1px 1px 20px black;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 0px 50px;
+
+}
+
+#containner_burger .pop_up img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.meat_cook {
+    display: flex;
+    gap: 4vw;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+}
+.meat_cook > div > div {
+    height: 30vw;
+    width: 40vw;
+    border-radius: 15px;
+    border: 1px black solid;
+    display: flex;
+    overflow: hidden;
+}
+.meat_cook > div.selected > div {
+    border: 3px solid #FF5733; /* Use a noticeable color for selection */
+    box-shadow: 0 0 10px #FF5733;
+}
+.meat_cook p {
+    margin: 8px 0px 0px 0px;
+}
+
+
+
+
+
+#containner_burger .pop_up input {
+    margin: 0%;
+    align-self: center;
+    height: 15px;
+    width: 15px;
+
+}
+
+.resume_burger {
+    box-shadow: 1px 1px 15px black;
+}
+
+.resume_burger > p ,.resume_burger > ul{
+    font-size: 19px;
+    text-shadow: 1px 1px 4px white;
+}
+
+#containner_burger .confirmer_les_choix {
+    background: linear-gradient(150deg , black,white);
+}

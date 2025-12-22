@@ -1,0 +1,79 @@
+#containner_desserts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0%;
+    padding-top: 60px;
+
+
+    background: radial-gradient( rgb(62, 38, 108) 90% , white 10%) ;
+    background-size: 600% 600%;
+}
+
+.quantity_popup {
+    
+    width: 70%;
+    background-color: rgb(242, 238, 255);
+    border: 2px black solid;
+    border-radius: 50px;
+
+
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    padding: 0px 20px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    display: none;
+
+}
+
+.quantity_popup div {
+    display: flex;
+} 
+
+.quantity_popup img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 17px;
+    margin-bottom: 20px;
+}
+
+.quantity_popup h1 {
+    font-size: 20px;
+    border-bottom: 1px black solid;
+    margin: 0%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+#containner_desserts #sections > h1 {
+    color : white ;
+
+}
+
+
+
+#containner_desserts .confirmer_les_choix {
+    background: linear-gradient(150deg , rgb(55, 11, 91) 50%,rgb(255, 255, 255));
+}
+
+
+
+
+

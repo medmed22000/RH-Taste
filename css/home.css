@@ -1,0 +1,122 @@
+#containner_main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0%;
+    padding-top: 60px;
+
+    
+    /* Classic fast food gradient */
+    background: linear-gradient(
+        135deg,
+        #ff3a30 0%,     /* Bright red */
+        #ff3b30 33%,
+        #ff9500 33%,    /* Orange */
+        #ff9500 66%,
+        #ffcc00 66%,    /* Yellow */
+        #ffcc00 100%
+    );
+    
+    /* Add dimension with shadow */
+    box-shadow: 
+        inset 0 0 100px rgba(255, 255, 255, 0.1),
+        inset 0 0 50px rgba(0, 0, 0, 0.2);
+    
+
+    background-size: 100% 100px;
+
+    
+    /* Subtle noise texture for premium feel */
+    background-blend-mode: overlay;
+}
+
+#new_products {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    padding: 0%;
+
+    overflow-x:scroll;
+    scroll-behavior:auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    
+    
+    
+}
+
+#new_products > li {
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+
+  flex: 0 0 100%;
+
+  scroll-snap-align: center;
+
+  text-align: center;
+
+  animation-delay: 2s;
+  
+
+}
+
+#new_products img {
+    object-fit: contain ; 
+    width : 35vw;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 1px 10px 15px;
+    margin-bottom: 20px;
+}
+
+
+
+
+#menus {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+}
+
+#menus > div {
+    height: 36vw;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+#menus p {
+    color: rgba(255, 255, 255, 0.437);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    margin: 0vw;
+}
+
+#menus > div > div {
+    height: 30vw;
+    width: 30vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px;
+    overflow: hidden;
+    align-content: center;
+    
+}
+#menus > div:hover {
+
+    animation : scale 300ms forwards;
+    cursor: pointer;
+}
+
+#menus img {
+    width: 100%;
+    object-fit: contain;
+}
