@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homeButton.forEach( button => {
 
             button.addEventListener('click', () => {
-                fetch('../ejs/home.ejs')
+                fetch('./home.ejs')
                     .then(response => {
                         if (!response.ok) throw new Error("Home page not found");
                         return response.text();
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (name === "burgers") fileName = "burger";
                 fileName = fileName + ".ejs";
 
-                fetch("../ejs/"+fileName)
+                fetch("./"+fileName)
                     .then(response => {
                         if (!response.ok) throw new Error("Page not found");
                         return response.text();
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INITIAL SETUP ---
     function initialize() {
 
-        fetch('../ejs/home.ejs')
+        fetch('./home.ejs')
                     .then(response => {
                         if (!response.ok) throw new Error("Home page not found");
                         return response.text();
