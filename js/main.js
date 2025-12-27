@@ -151,6 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
             orderDetailsText += `Réduction: -€${promoDiscount.toFixed(2)}\n`;
         }
 
+        const orderTime = new Date().toLocaleTimeString('fr-BE', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
         // 3. Prepare Data for EmailJS
         const templateParams = {
             from_name: name,
@@ -161,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
             order_details: orderDetailsText,
             total_price: document.querySelector(".order_total_price").innerText,
             promo_applied: promoApplied ? 'Oui' : 'Non',
-            promo_discount: promoApplied ? `€${promoDiscount.toFixed(2)}` : '€0.00'
+            promo_discount: promoApplied ? `€${promoDiscount.toFixed(2)}` : '€0.00',
+            order_time : orderTime
         };
 
         // Show loading status
@@ -170,7 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
         statusText.innerText = "Processing order...";
 
         // 4. Send the Email
-        emailjs.send('service.client.rh.taste', 'template_bjy3z56', templateParams)
+        emailjs.send('to_kitchen', 'template_5di9epe', templateParams)
+        emailjs.send('to_client', 'template_bjy3z56', templateParams)
             .then(function(response) {
                 // Success UI
                 alert("Commande bien confirmée, on te contactera bientot.");
@@ -194,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Failed to send order. Please call us directly.");
                 statusText.style.display = "none";
             });
+
     }
 
     // --- UTILITY FUNCTIONS (Global) ---
@@ -923,7 +931,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Update basket display
                     updateBasketDisplay(currentSelection);
                     
-                    alert(`Commande pour ${currentSelection.itemNme} confirmer! Ajoutée au panier !`);
                     
                     // Close popup
                     closeOthersPopup()
@@ -1045,7 +1052,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Update basket display
                     updateBasketDisplay(currentSelection);
                     
-                    alert(`Commande pour ${currentSelection.itemNme} confirmer! Ajoutée au panier !`);
                     
                     // Close popup
                     closePopup();
