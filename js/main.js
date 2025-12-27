@@ -103,11 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const email_adress = document.getElementById("client_email").value;
         const methode_paiment = document.querySelector("input[name='paiment']:checked");
 
-        if(!name || !phone || !address || !email_adress || !methode_paiment ) {
-            alert("Veuillez ajouter ton Nom, Gsm, email et Address svp !");
+        if(!name ) {
+            alert("Veuillez ajouter votre Nom svp !");
+            return;
+        }
+        if(!phone  ) {
+            alert("Veuillez ajouter votre numero de telephone svp !");
+            return;
+        }
+        if( !address  ) {
+            alert("Veuillez ajouter votre de livraison svp !");
+            return;
+        }
+        if( !email_adress) {
+            alert("Veuillez ajouter votre email-address svp !");
+            return;
+        }
+        if( !methode_paiment ) {
+            alert("Veuillez choisir une méthode de paiment svp !");
             return;
         }
 
+        
         if(total_order.length === 0) {
             alert("Ton panier est vide !");
             return;
