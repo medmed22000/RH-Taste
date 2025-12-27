@@ -33,7 +33,7 @@
     object-fit: contain;
 }
 #item_menu > div .title {
-    margin: 10px 15px 0px 15px;
+    margin: 10px 15px 10px 15px;
     
     font-size: 22px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -118,15 +118,15 @@ button{
     gap: 15px;
 }
 .quantity-selector > span {
-    font-size: 22px;
+    font-size: 20px;
 }
 .quantity-selector > button {
     border-radius: 50%;
     background-color: black;
     color: white;
     font-size: 20px;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     border: none;
     box-shadow: 0px 1px 8px rgba(255, 255, 255, 0.433);
 
@@ -167,23 +167,22 @@ button{
     justify-content: center;
 
 
-    height: 60px;
+    height: 50px;
     width: max-content;
     border-radius: 50px;
     border: none;
 
-    font-size: 20px;
+    font-size: 17px;
     font-family:'Times New Roman', Times, serif;
 
-    margin-top: 25px;
-    margin-bottom: 60px ;
+    margin-top: 22px;
+    margin-bottom: 50px ;
 
     padding-left: 25px;
     padding-right: 25px;
 }
 
-
-#containner_tacos .pop_up {
+.pop_up {
     width: 100%;
     height: 75%;
     border-radius: 50px 50px 0px 0px;
@@ -209,12 +208,28 @@ button{
 
 
 
+    #containner_desserts #item_menu > div , #containner_boissons #item_menu > div {
+        width: 240px;
+
+    }
+
+    #containner_desserts #item_menu > div img , #containner_boissons #item_menu > div img {
+        width: 240px;
+    }
+    #containner_desserts #item_menu > div .title , #containner_boissons #item_menu > div .title{
+        font-size: 15px;
+    }
+
+    #item_menu > div .discription {
+        font-size: 13px;
+    }
 
 
 
 
-
-
+#containner_boissons .title {
+    margin: 10px 15px 0px 15px;
+}
 
 
 
@@ -289,6 +304,21 @@ button{
     }
     
     /* Pop-up adjustments for desktop */
+    .meat_cook > div > div , .extra > div > div > div , .supplements > div > div {
+        width: 24vw;
+        height: 18vw;
+    }
+
+
+
+    #containner_desserts #item_menu > div , #containner_boissons #item_menu > div {
+        width: 300px;
+
+    }
+
+    #containner_desserts #item_menu > div img , #containner_boissons #item_menu > div img {
+        width: 300px;
+    }
 
 
 }
@@ -303,9 +333,32 @@ button{
 
 
 
-    .tacos_size > div > div , .extra > div > div > div , .supplements > div > div {
+    .meat_cook > div > div , .extra > div > div > div , .supplements > div > div {
         width: 20vw;
         height: 15vw;
     }
+
+    #containner_desserts #item_menu > div , #containner_boissons #item_menu > div {
+        width: 300px;
+
+    }
+
+    #containner_desserts #item_menu > div img , #containner_boissons #item_menu > div img {
+        width: 300px;
+    }
+
 }
 
+
+
+
+
+.disabled-div {
+    pointer-events: none;
+    opacity: 0.8; /* Optional: gives a visual cue that it's disabled */
+}
+
+.disabled-div:hover {
+    pointer-events: none;
+    opacity: 0.8; /* Optional: gives a visual cue that it's disabled */
+}

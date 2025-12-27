@@ -14,9 +14,7 @@
 }
 
 .quantity_popup {
-    
-    width: 70%;
-    background-color: rgb(242, 238, 255);
+
     border: 2px black solid;
     border-radius: 50px;
 
@@ -36,12 +34,16 @@
 
 }
 
+#containner_desserts .quantity_popup {
+    background-color: rgb(242, 238, 255);
+}
+
 .quantity_popup div {
     display: flex;
 } 
 
 .quantity_popup img {
-    width: 100%;
+    width: 250px;
     object-fit: contain;
     border-radius: 17px;
     margin-bottom: 20px;

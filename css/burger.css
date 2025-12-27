@@ -46,6 +46,7 @@
 
 .meat_cook {
     display: flex;
+    flex-wrap: wrap;
     gap: 4vw;
     justify-self: center;
     justify-content: center;
@@ -65,6 +66,10 @@
 }
 .meat_cook p {
     margin: 8px 0px 0px 0px;
+    font-size: 18px;
+    text-shadow: 1px 1px 10px white;
+    font-weight: 300;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 

@@ -49,23 +49,6 @@
     object-fit: contain;
 }
 
-.tacos_size {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4vw;
-    justify-self: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.tacos_size > div > div {
-    height: 30vw;
-    width: 40vw;
-    border-radius: 15px;
-    border: 1px black solid;
-    display: flex;
-    overflow: hidden;
-}
 .tacos_size > div.selected > div {
     border: 3px solid white; /* Use a noticeable color for selection */
     box-shadow: 0 0 10px white;

@@ -1,0 +1,38 @@
+#containner_boissons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0%;
+    padding-top: 60px;
+
+
+    background: radial-gradient(rgb(0 70 111) 90%, white 10%);
+    background-size: 600% 600%;
+}
+
+
+#containner_boissons .quantity_popup {
+    background-color: rgb(129, 164, 184);
+}
+
+
+
+
+#containner_boissons #sections > h1 {
+    color : white ;
+
+}
+
+
+
+#containner_boissons .confirmer_les_choix {
+    background: linear-gradient(150deg , rgb(0 70 111) 50%,rgb(255, 255, 255));
+}
+
+
+
+
+

@@ -66,7 +66,7 @@
 
 #new_products img {
     object-fit: contain ; 
-    width : 35vw;
+    width : 165px;
     border-radius: 100%;
     border: none;
     box-shadow: 1px 10px 15px;
@@ -77,7 +77,7 @@
 
 
 #menus {
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -86,37 +86,88 @@
 }
 
 #menus > div {
-    height: 36vw;
-    width: 30vw;
+
     display: flex;
     flex-direction: column;
     gap: 1.5vw;
+
+    overflow:visible;
 }
 
 #menus p {
     color: rgba(255, 255, 255, 0.437);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 4vw;
+    font-size: 22px;
     text-align: center;
     margin: 0vw;
 }
 
 #menus > div > div {
-    height: 30vw;
-    width: 30vw;
+    height: 129px;
     border-radius: 10px;
     box-shadow: 5px 5px 20px;
     overflow: hidden;
     align-content: center;
     
 }
+
+
+#menus img {
+    width: 130px;
+    object-fit: contain;
+}
+
 #menus > div:hover {
 
     animation : scale 300ms forwards;
     cursor: pointer;
 }
 
-#menus img {
-    width: 100%;
-    object-fit: contain;
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (min-width: 750px) {
+
+    #new_products img {
+        width: 220px;
+    }
+
+    #menus > div > div {
+        height: 159px;
+    }
+
+
+    #menus img {
+        width: 160px;
+    }
+
+    #menus p {
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    #new_products img {
+        width : 300px;
+    }
+
+    #menus {
+        width: 85%;
+        margin-top: 30px;
+    }
+
+    #menus > div > div {
+        height: 229px;
+    }
+
+
+    #menus img {
+        width: 250px;
+    }
+
+    #menus p {
+        font-size: 38px
+    }
 }

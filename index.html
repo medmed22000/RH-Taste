@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/index.css" rel="stylesheet">
-    <link href="./css/categories_standar_elemnts.css" rel="stylesheet">
     <link href="./css/home.css" rel="stylesheet">
     <link href="./css/burger.css" rel="stylesheet">
     <link href="./css/tacos.css" rel="stylesheet">
     <link href="./css/desserts.css" rel="stylesheet">
+    <link href="./css/boissons.css" rel="stylesheet">
+    <link href="./css/categories_standar_elemnts.css" rel="stylesheet">
 
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
@@ -37,20 +38,26 @@
 
     <section id="basket">
 
-        <h1>Total order</h1>
+        <h1>Votre panier</h1>
         <div class="order_details"></div>
-
-        <h2>Total<span class="order_total_price">0 €</span></h2>
         
         <div class="client-info">
-            <input type="text" id="client_name" placeholder="Your Name" required>
-            <input type="tel" id="client_phone" placeholder="Phone Number" required>
-            <input type="tel" id="client_email" placeholder="Adress email" required>
-            <input type="text" id="client_address" placeholder="Delivery Address" required>
-        </div>
+            <label>Nom* : </label><input type="text" id="client_name" " required>
+            <label>Adresse : </label><input type="text" id="client_address" required>
+            <label>Gsm* : </label><input type="tel" id="client_phone" " required>
+            <label>Adresse email* : </label><input type="tel" id="client_email" " required>
+            <label>Code promo : </label><input type="text" id="promo_code" "><button class="apply-promo-btn">Appliquer</button>
+            <label>Paiment*<br>(sur livraison) : </label><div style="display: flex; gap:40px">
+                <p><input type="radio" name="paiment" id="paiment" value="Cash 💸" required ">Cash</p>
+                <p><input type="radio" name="paiment" id="paiment" value="Carte 💳​" required ">Carte</p>
+            </div>
+        </div>        
+
+        <h2 style="font-size: 20px;">Total<span class="order_total_price" style="font-size: 20px;">0 €</span></h2>
+
         <p id="order-status" style="color: green; display: none;">Sending order..</p>
 
-        <button class="confirmer_l_ordre">Place order</button>
+        <button class="confirmer_l_ordre">Confirmer</button>
 
     </section>
 
