@@ -782,6 +782,13 @@ document.addEventListener('DOMContentLoaded', () => {
             total: parseFloat(basePrice),
             itemCount: ''
         };
+
+        const radioButtons = document.querySelectorAll('input[name="sauce"]');
+        if ( radioButtons ) {
+            radioButtons.forEach(radio => {
+                radio.checked = false;
+            });            
+        }
         
         body.style.overflow = 'hidden';
         if (overlay) overlay.style.display = "block";
