@@ -136,12 +136,14 @@
     }
 
     #menus > div > div {
-        height: 159px;
+        height: 158px;
+        width: 158px;
     }
 
 
     #menus img {
         width: 160px;
+        height: 160px;
     }
 
     #menus p {
@@ -161,12 +163,14 @@
     }
 
     #menus > div > div {
-        height: 229px;
+        height: 228px;
+        width: 228px;
     }
 
 
     #menus img {
         width: 250px;
+        height: 250px;
     }
 
     #menus p {
