@@ -44,6 +44,10 @@
     object-fit: contain;
 }
 
+#containner_burger .confirmer_les_choix {
+    color:black;
+    }
+
 .meat_cook {
     display: flex;
     flex-wrap: wrap;
