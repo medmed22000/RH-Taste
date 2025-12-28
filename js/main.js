@@ -671,6 +671,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- NAVIGATION (For loading pages) ---
     function setupNavigation() {
         const categories_div = document.querySelectorAll("#menus > div");
+
+        const ads = document.querySelectorAll("#new_products img ");
+
+        ads.forEach(img => {
+            img.addEventListener('click', () => {
+                let name = img.className;
+                let fileName = name;
+                if (name === "burgers") fileName = "burger";
+                fileName = fileName + ".ejs";
+
+                fetch("./"+fileName)
+                    .then(response => {
+                        if (!response.ok) throw new Error("Page not found");
+                        return response.text();
+                    })
+                    .then(html => {
+                        document.getElementById('containner').innerHTML = html;
+                        
+                        // Close any open popup
+                        closePopup();
+                        
+                        // Close basket if open
+                        closeBasket();
+
+                        closeOthersPopup()
+                        
+                        // Setup page-specific logic
+                        setupPageSpecificLogic();
+                        window.scrollTo(0, 0);
+                    })
+                    .catch(error => console.error('Error loading page:', error));
+            });
+        });
         
         categories_div.forEach(div => {
             div.addEventListener('click', () => {
