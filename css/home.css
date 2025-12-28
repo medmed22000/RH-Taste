@@ -103,8 +103,8 @@
 }
 
 #menus > div > div {
-    height: 128px;
-    width: 128px;
+    height: 125px;
+    width: 125px;
     border-radius: 10px;
     box-shadow: 5px 5px 20px;
     overflow: hidden;
