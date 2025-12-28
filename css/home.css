@@ -10,27 +10,8 @@
 
     
     /* Classic fast food gradient */
-    background: linear-gradient(
-        135deg,
-        #ff3a30 0%,     /* Bright red */
-        #ff3b30 33%,
-        #ff9500 33%,    /* Orange */
-        #ff9500 66%,
-        #ffcc00 66%,    /* Yellow */
-        #ffcc00 100%
-    );
-    
-    /* Add dimension with shadow */
-    box-shadow: 
-        inset 0 0 100px rgba(255, 255, 255, 0.1),
-        inset 0 0 50px rgba(0, 0, 0, 0.2);
-    
+    background: linear-gradient( 145deg ,rgb(22, 21, 21) 40% , rgb(255, 255, 255) );
 
-    background-size: 100% 100px;
-
-    
-    /* Subtle noise texture for premium feel */
-    background-blend-mode: overlay;
 }
 
 #new_products {
