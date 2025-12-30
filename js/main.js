@@ -755,6 +755,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             setupOthersLogic()
         }
+
+        
+        const popup = document.querySelector('.pop_up');
+        const quantityPopup = document.querySelector('.quantity_popup');
+        
+        if (popup) {
+            popup.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+        
+        if (quantityPopup) {
+            quantityPopup.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
     }
 
     // scroll over to the required element missing
