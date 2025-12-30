@@ -635,37 +635,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- HOME BUTTON (Always active) ---
     function setupHomeButton() {
-        if ( homeButton) {
-            homeButton.forEach( button => {
+        if (homeButton) {
+            homeButton.forEach(button => {
                 button.addEventListener('click', () => {
-                    fetch('./home.ejs')
-                        .then(response => {
-                            if (!response.ok) throw new Error("Home page not found");
-                            return response.text();
-                        })
-                        .then(html => {
-                            document.getElementById('containner').innerHTML = html;
-                            
-                            // Close any open popup
-                            closePopup();
-                            
-                            // Close basket if open
-                            closeBasket();
-
-                            closeOthersPopup()
-                            
-                            // Reinitialize navigation
-                            setupNavigation();
-
-                            autoScroll();
-                            
-                            // Reset scrolling
-                            body.style.overflow = '';
-                        })
-                        .catch(error => console.error('Error loading home page:', error));
+                    // Update browser history
+                    history.pushState({ page: 'home' }, "", "?page=home");
+                    
+                    loadHomePage();
                 });
             });
         }
+    }
+
+    function loadHomePage() {
+        fetch('./home.ejs')
+            .then(response => {
+                if (!response.ok) throw new Error("Home page not found");
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('containner').innerHTML = html;
+                
+                // Close any open popup
+                closePopup();
+                
+                // Close basket if open
+                closeBasket();
+                
+                closeOthersPopup();
+                
+                // Reinitialize navigation
+                setupNavigation();
+                
+                autoScroll();
+                
+                // Reset scrolling
+                body.style.overflow = '';
+                
+                // Update current page state
+                currentPage = 'home';
+            })
+            .catch(error => console.error('Error loading home page:', error));
     }
 
     // --- NAVIGATION (For loading pages) ---
@@ -681,28 +691,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (name === "burgers") fileName = "burger";
                 fileName = fileName + ".ejs";
 
-                fetch("./"+fileName)
-                    .then(response => {
-                        if (!response.ok) throw new Error("Page not found");
-                        return response.text();
-                    })
-                    .then(html => {
-                        document.getElementById('containner').innerHTML = html;
-                        
-                        // Close any open popup
-                        closePopup();
-                        
-                        // Close basket if open
-                        closeBasket();
-
-                        closeOthersPopup()
-                        
-                        // Setup page-specific logic
-                        setupPageSpecificLogic();
-                        window.scrollTo(0, 0);
-                    })
-                    .catch(error => console.error('Error loading page:', error));
-            });
+                // Update browser history
+                history.pushState({ page: name }, "", `?page=${name}`);
+                
+                loadPage(fileName, name);
+                });
         });
         
         categories_div.forEach(div => {
@@ -712,29 +705,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (name === "burgers") fileName = "burger";
                 fileName = fileName + ".ejs";
 
-                fetch("./"+fileName)
-                    .then(response => {
-                        if (!response.ok) throw new Error("Page not found");
-                        return response.text();
-                    })
-                    .then(html => {
-                        document.getElementById('containner').innerHTML = html;
-                        
-                        // Close any open popup
-                        closePopup();
-                        
-                        // Close basket if open
-                        closeBasket();
-
-                        closeOthersPopup()
-                        
-                        // Setup page-specific logic
-                        setupPageSpecificLogic();
-                        window.scrollTo(0, 0);
-                    })
-                    .catch(error => console.error('Error loading page:', error));
-            });
+                // Update browser history
+                history.pushState({ page: name }, "", `?page=${name}`);
+                
+                loadPage(fileName, name);
+                });
         });
+    }
+
+
+    function loadPage(fileName, pageName) {
+        fetch("./" + fileName)
+            .then(response => {
+                if (!response.ok) throw new Error("Page not found");
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('containner').innerHTML = html;
+                
+                // Close any open popup
+                closePopup();
+                
+                // Close basket if open
+                closeBasket();
+                
+                closeOthersPopup();
+                
+                // Setup page-specific logic
+                setupPageSpecificLogic();
+                window.scrollTo(0, 0);
+                
+                // Update current page state
+                currentPage = pageName;
+            })
+            .catch(error => console.error('Error loading page:', error));
     }
 
     // --- PAGE-SPECIFIC LOGIC (Temporary - resets with page change) ---
@@ -1299,31 +1303,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- INITIAL SETUP ---
     function initialize() {
-        fetch('./home.ejs')
-            .then(response => {
-                if (!response.ok) throw new Error("Home page not found");
-                return response.text();
-            })
-            .then(html => {
-                document.getElementById('containner').innerHTML = html;
-                
-                // Close any open popup
-                closePopup();
-                
-                // Close basket if open
-                closeBasket();
-
-                closeOthersPopup()
-                
-                // Reinitialize navigation
-                setupNavigation();
-
-                autoScroll();
-                
-                // Reset scrolling
-                body.style.overflow = '';
-            })
-            .catch(error => console.error('Error loading home page:', error));
+        // Check URL for initial page
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+        
+        if (page) {
+            // Load from URL parameter
+            if (page === 'home') {
+                loadHomePage();
+            } else {
+                let fileName = page;
+                if (page === 'burgers') fileName = 'burger';
+                fileName = fileName + ".ejs";
+                loadPage(fileName, page);
+            }
+        } else {
+            // Default to home page with history
+            history.replaceState({ page: 'home' }, "", "?page=home");
+            loadHomePage();
+        }
         
         // Setup basket toggle
         if (basket_button) {
@@ -1360,6 +1358,25 @@ document.addEventListener('DOMContentLoaded', () => {
         setupNavigation();
     }
 
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.page) {
+            const page = event.state.page;
+            
+            if (page === 'home') {
+                loadHomePage();
+            } else {
+                let fileName = page;
+                if (page === 'burgers') fileName = 'burger';
+                fileName = fileName + ".ejs";
+                loadPage(fileName, page);
+            }
+        } else {
+            // Default to home page
+            loadHomePage();
+        }
+    });
     // Start everything
     initialize();
     // Setup always-active elements
