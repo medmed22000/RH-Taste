@@ -10,8 +10,8 @@
 
     
     /* Classic fast food gradient */
-    background: linear-gradient(112deg, rgb(27 25 25) 40%, rgb(255 255 255));
-
+    background: url("../medias/main/background.jpg");    
+    background-size: 100% 110%;
 }
 
 #new_products {
