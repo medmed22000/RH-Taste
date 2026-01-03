@@ -477,9 +477,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function verifyPromoCode(code) {
         // Single promo code - modify these values as needed
         const ACTIVE_PROMO_CODE = "CAN25";
-        const DISCOUNT_PERCENTAGE = 0.10; // 10%
+        const costummerCode = "RAR26"
+        let DISCOUNT_PERCENTAGE = 0.10; // 10%
         
         if (code === ACTIVE_PROMO_CODE) {
+            if (!promoApplied) {
+                applyPromo(DISCOUNT_PERCENTAGE);
+            } else {
+                alert("Code promo déjà appliqué!");
+            }
+        }
+        else if (code === costummerCode) {
+            DISCOUNT_PERCENTAGE = 0.15 ;
             if (!promoApplied) {
                 applyPromo(DISCOUNT_PERCENTAGE);
             } else {
